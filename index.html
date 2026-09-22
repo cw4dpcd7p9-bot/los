@@ -10,27 +10,28 @@
 </head>
 <body>
   <div id="map"></div>
+  <div class="frame"></div>
   <div class="hud">
     <div class="top">
       <div class="brand">LOS <span>MAP</span></div>
       <div class="street">
         <div id="street">locating</div>
-        <small id="place">allow location · or click a point</small>
+        <small id="place">allow location · click to mark</small>
       </div>
     </div>
     <form class="search" onsubmit="return false">
-      <input id="q" type="search" placeholder="SEARCH A PLACE" autocomplete="off" />
+      <input id="q" type="search" placeholder="/ SEARCH" autocomplete="off" />
       <div class="results" id="results"></div>
     </form>
-    <div class="hint">CLICK TO SET THE ONLY WAYPOINT</div>
+    <div class="hint" id="hint">CLICK MAP TO SET WAYPOINT</div>
     <div class="radar-wrap">
-      <div class="radar-n">N</div>
+      <div class="radar-rose" id="rose"><i>N</i></div>
       <div class="radar"><div id="radar"></div></div>
     </div>
     <div class="tape">
       <div class="maneuver">
-        <div class="next" id="maneuver-text">SET A POINT</div>
-        <div class="sub" id="maneuver-sub">click the map · one destination</div>
+        <div class="next" id="maneuver-text">NO WAYPOINT</div>
+        <div class="sub" id="maneuver-sub">one destination. nothing else.</div>
       </div>
       <div class="stats">
         <div class="stat"><b id="spd">0</b><span>MPH</span></div>
@@ -39,9 +40,10 @@
       </div>
     </div>
     <div class="tools">
-      <button type="button" id="btn-follow" title="Recenter">YOU</button>
-      <button type="button" id="btn-mode" title="Profile">CAR</button>
-      <button type="button" id="btn-clear" title="Clear">CLR</button>
+      <button type="button" id="btn-follow" class="on">YOU</button>
+      <button type="button" id="btn-sat">SAT</button>
+      <button type="button" id="btn-mode">CAR</button>
+      <button type="button" id="btn-clear">CLR</button>
     </div>
   </div>
   <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>

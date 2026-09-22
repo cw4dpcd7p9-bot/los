@@ -6,13 +6,11 @@ Not Google. Not a game extract. OpenStreetMap data, a heading-up radar, one wayp
 
 ## Open it
 
-Serve the folder (MapLibre will not like `file://` for workers in some browsers):
+https://raw.githack.com/cw4dpcd7p9-bot/los/main/index.html
 
-```bash
-python3 -m http.server 8788
-```
+Allow location. Click the map once.
 
-Then [http://127.0.0.1:8788](http://127.0.0.1:8788). Allow location.
+Repo: https://github.com/cw4dpcd7p9-bot/los
 
 ## Why this is not another skin
 

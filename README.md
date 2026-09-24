@@ -1,36 +1,26 @@
 # LOS
 
-A real-world map with pause-map chrome.
+Real-world pause map. One waypoint. Radar. Drive cam.
 
-Not Google. Not a game extract. OpenStreetMap data, a heading-up radar, one waypoint, a purple GPS ribbon you can read without squinting.
-
-## Open it
+## Open
 
 https://raw.githack.com/cw4dpcd7p9-bot/los/main/index.html
 
-Allow location. Click the map once.
-
-Repo: https://github.com/cw4dpcd7p9-bot/los
-
-## Why this is not another skin
-
-Most map apps fail while you’re moving. Cards cover the road. Pins multiply. The next turn is a paragraph.
-
-LOS keeps three numbers on the glass: **speed**, **ETA**, **distance**. The next maneuver is a billboard. The radar rotates with you. The pause map stays north-up so you can aim a point with a finger, like the old pause screen. Search is a command box. There is no recommended restaurant.
-
-Tiles: [OpenFreeMap](https://openfreemap.org) (no key).  
-Routes: [OSRM](https://project-osrm.org) public demo.  
-Search / reverse: [Photon](https://photon.komoot.io).
-
-Those public endpoints are for reasonable use. Don’t point a production fleet at them.
+Allow location. Click once. SAT for aerials. CAM for heading-up 3D. VOX talks the next turn.
 
 ## Controls
 
-- Click the map → set the only destination
-- `YOU` → snap back to the blip
-- `CAR` / `FT` → drive or walk
-- `CLR` → drop the waypoint
+- Click map — set the only destination (snaps to road)
+- `YOU` — north-up follow
+- `CAM` — drive camera, pitch + heading
+- `SAT` — Esri aerials
+- `CAR` / `FT` — profile
+- `VOX` — spoken maneuvers
+- `ALT` — cycle alternate routes
+- `LNK` — copy a share URL
+- `/` search · `Esc` clear
+- Tap the radar to recenter
 
-## What this is not
+Route fades behind you. Leave the line and it reroutes. Arrival flashes when you're on the pin.
 
-It is not offline. It is not live traffic. It is not an iOS package — that’s the next cut, SwiftUI, same HUD. It does not ship Rockstar art. The language is the HUD language: radar, blip, pause map, one waypoint.
+Tiles: OpenFreeMap. Aerials: Esri. Routes: OSRM. Search: Photon.

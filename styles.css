@@ -1,6 +1,6 @@
 :root {
   --bg: #050608;
-  --panel: rgba(6, 8, 10, 0.78);
+  --panel: rgba(6, 8, 10, 0.8);
   --ink: #f2ead6;
   --dim: #9a927f;
   --line: rgba(255, 236, 180, 0.16);
@@ -99,13 +99,27 @@ body {
   font-size: 12px;
 }
 .hint.off { display: none; }
+.arrive {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--blip);
+  text-shadow: 0 8px 40px #000;
+}
+.arrive.on { display: block; }
 .radar-wrap {
-  pointer-events: none;
+  pointer-events: auto;
   position: absolute;
   left: 22px;
   bottom: 22px;
   width: 186px;
   height: 186px;
+  cursor: pointer;
 }
 .radar {
   width: 100%;
@@ -171,21 +185,23 @@ body {
 .tools {
   pointer-events: auto;
   position: absolute;
-  right: 22px;
+  right: 18px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  max-height: 70vh;
+  overflow: auto;
 }
 .tools button {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 40px;
   background: var(--panel);
   color: var(--ink);
   border: 1px solid var(--line);
   cursor: pointer;
-  font: 700 13px "Barlow Condensed", sans-serif;
+  font: 700 12px "Barlow Condensed", sans-serif;
   letter-spacing: 0.08em;
   backdrop-filter: blur(12px);
 }
@@ -229,7 +245,7 @@ body {
   .search { width: calc(100vw - 28px); top: 78px; }
   .street { font-size: 20px; }
   .radar-wrap { width: 128px; height: 128px; }
-  .tape { left: 156px; }
+  .tape { left: 156px; flex-wrap: wrap; }
   .maneuver .next { font-size: 20px; }
-  .tools button { width: 40px; height: 40px; }
+  .arrive { font-size: 36px; }
 }

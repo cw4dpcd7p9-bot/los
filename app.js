@@ -260,6 +260,9 @@ function updateMissionUI() {
   const mode = state.profile === "driving" ? "DRIVING" : "ON FOOT";
   $("mission-mode").textContent = mode;
 
+  const wantedLevel = state.arrived ? "LVL 0" : state.route ? (state.voice ? "LVL 2" : "LVL 1") : "LVL 0";
+  $("wanted").textContent = wantedLevel;
+
   if (!state.dest) {
     $("mission-target").textContent = "NO DESTINATION";
     $("mission-range").textContent = "READY";
@@ -271,9 +274,8 @@ function updateMissionUI() {
 
   if (state.route && state.route.geometry?.coordinates?.length) {
     const coords = state.route.geometry.coordinates;
-    const remainM = coords.slice(nearestIndex(coords, state.pos).i).length > 1
-      ? lineLength(coords.slice(nearestIndex(coords, state.pos).i))
-      : state.route.distance;
+    const index = nearestIndex(coords, state.pos).i;
+    const remainM = coords.slice(index).length > 1 ? lineLength(coords.slice(index)) : state.route.distance;
     $("mission-range").textContent = fmtMi(remainM);
   } else {
     $("mission-range").textContent = "ROUTING";
@@ -297,7 +299,8 @@ function paintHud() {
   }
 
   const coords = state.route.geometry?.coordinates || [];
-  const left = coords.slice(nearestIndex(coords, state.pos).i);
+  const index = nearestIndex(coords, state.pos).i;
+  const left = coords.slice(index);
   const remainM = left.length > 1 ? lineLength(left) : state.route.distance;
   const frac = state.route.distance ? remainM / state.route.distance : 1;
   $("eta").textContent = fmtTime(state.route.duration * frac);

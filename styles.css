@@ -1,4 +1,4 @@
- :root {
+:root {
   --bg: #050608;
   --panel: rgba(11, 14, 18, 0.76);
   --panel-strong: rgba(18, 22, 26, 0.9);
@@ -79,11 +79,27 @@ body {
   box-shadow: 0 8px 26px rgba(0,0,0,0.24);
   backdrop-filter: blur(12px);
 }
+.mission-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
 .mission-label {
   font-size: 10px;
   letter-spacing: 0.32em;
   color: var(--blip);
   margin-bottom: 2px;
+}
+.wanted {
+  display: inline-block;
+  padding: 3px 6px;
+  border: 1px solid rgba(240,208,0,0.4);
+  background: rgba(240,208,0,0.08);
+  color: var(--blip);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 .mission-target {
   font-size: clamp(20px, 2vw, 28px);
@@ -114,6 +130,22 @@ body {
   font-size: 11px;
   text-transform: uppercase;
   text-shadow: 0 0 16px rgba(90, 227, 179, 0.32);
+}
+.status-line::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor;
+  animation: pulse 1.7s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
 .search {

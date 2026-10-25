@@ -19,6 +19,18 @@
         <small id="place">allow location · click to mark</small>
       </div>
     </div>
+
+    <div class="mission-panel">
+      <div class="mission-label">MISSION</div>
+      <div class="mission-target" id="mission-target">NO DESTINATION</div>
+      <div class="mission-meta">
+        <span id="mission-mode">DRIVING</span>
+        <span id="mission-range">READY</span>
+      </div>
+    </div>
+
+    <div class="status-line" id="status-line">SCOUT MODE</div>
+
     <form class="search" onsubmit="return false">
       <input id="q" type="search" placeholder="/ SEARCH" autocomplete="off" />
       <div class="results" id="results"></div>
@@ -47,6 +59,7 @@
       <button type="button" id="btn-mode">CAR</button>
       <button type="button" id="btn-voice">VOX</button>
       <button type="button" id="btn-alt">ALT</button>
+      <button type="button" id="btn-reset">REC</button>
       <button type="button" id="btn-in">+</button>
       <button type="button" id="btn-out">−</button>
       <button type="button" id="btn-share">LNK</button>
